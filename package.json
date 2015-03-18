@@ -1,0 +1,30 @@
+{
+  "name": "defaults",
+  "version": "1.0.0",
+  "description": "Copies owned, enumerable properties from a source object(s) to a target object when the value of that property on the source object is `undefined`.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ndhoule/defaults.git"
+  },
+  "keywords": [
+    "component"
+  ],
+  "author": "Nathan Houle <nathan@nathanhoule.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ndhoule/defaults/issues"
+  },
+  "homepage": "https://github.com/ndhoule/defaults",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "esformatter-braces": "^1.0.0",
+    "esformatter-quotes": "^1.0.0",
+    "esformatter-semicolons": "^1.0.3",
+    "eslint": "^0.15.0",
+    "jsfmt": "^0.4.0",
+    "mocha": "^2.1.0",
+    "zuul": "^2.0.0"
+  }
+}
