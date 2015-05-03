@@ -6,16 +6,9 @@ Copies owned, enumerable properties from a source object(s) to a target object w
 
 ## Installation
 
-Browser:
-
 ```sh
-component install ndhoule/defaults
-```
-
-Node:
-
-```sh
-$ npm install defaults
+$ component install ndhoule/defaults
+$ npm install @ndhoule/defaults
 ```
 
 ## API
