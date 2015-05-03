@@ -8,7 +8,8 @@
     "url": "https://github.com/ndhoule/defaults.git"
   },
   "keywords": [
-    "component"
+    "component",
+    "defaults"
   ],
   "author": "Nathan Houle <nathan@nathanhoule.com>",
   "license": "MIT",
@@ -16,8 +17,7 @@
     "url": "https://github.com/ndhoule/defaults/issues"
   },
   "homepage": "https://github.com/ndhoule/defaults",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "esformatter-braces": "^1.0.0",
     "esformatter-quotes": "^1.0.0",
