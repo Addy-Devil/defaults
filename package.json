@@ -19,12 +19,15 @@
   "homepage": "https://github.com/ndhoule/defaults",
   "dependencies": {},
   "devDependencies": {
+    "benchmark": "^1.0.0",
     "esformatter-braces": "^1.0.0",
     "esformatter-quotes": "^1.0.0",
     "esformatter-semicolons": "^1.0.3",
     "eslint": "^0.15.0",
     "jsfmt": "^0.4.0",
+    "lodash": "^3.10.0",
     "mocha": "^2.1.0",
+    "underscore": "^1.8.3",
     "zuul": "^2.0.0"
   }
 }
