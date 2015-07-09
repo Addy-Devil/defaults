@@ -1,6 +1,13 @@
 'use strict';
 
 /**
+ * Module dependencies.
+ */
+
+// XXX: Hacky fix for Duo not supporting scoped modules
+var rest; try { rest = require('@ndhoule/rest'); } catch(e) { rest = require('ndhoule/rest'); }
+
+/**
  * hasOwnProperty reference.
  */
 
@@ -42,7 +49,7 @@ var defaults = function(target /*, ...sources */) {
     return target;
   }
 
-  var sources = Array.prototype.slice.call(arguments, 1);
+  var sources = rest(arguments);
 
   for (var i = 0; i < sources.length; i += 1) {
     for (var key in sources[i]) {

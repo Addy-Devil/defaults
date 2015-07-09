@@ -9,7 +9,9 @@
   "scripts": [
     "index.js"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "ndhoule/rest": "^1.0.0"
+  },
   "development": {
     "mochajs/mocha": "^2.1.0"
   }
