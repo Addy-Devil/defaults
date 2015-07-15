@@ -50,9 +50,7 @@ var setup = function setup() {
   };
 };
 
-var suite = new Benchmark.Suite();
-
-suite
+var shallowSuite = new Benchmark.Suite()
   .on('start cycle', setup)
   .add('@ndhoule/defaults', function() {
     defaults(target, sourceA, sourceB);
@@ -68,5 +66,21 @@ suite
   })
   .on('complete', function() {
     console.log('Fastest is ' + this.filter('fastest').pluck('name'));
+  });
+
+var deepSuite = new Benchmark.Suite()
+  .on('start cycle', setup)
+  .add('@ndhoule/defaults.deep', function() {
+    defaults.deep(target, sourceA, sourceB);
   })
-  .run();
+  .add('lodash.defaultsDeep', function() {
+    ld.defaultsDeep(target, sourceA, sourceB);
+  })
+  .on('cycle', function(event) {
+    console.log(String(event.target));
+  })
+  .on('complete', function() {
+    console.log('Fastest is ' + this.filter('fastest').pluck('name'));
+  });
+
+Benchmark.invoke([shallowSuite, deepSuite], { name: 'run' });

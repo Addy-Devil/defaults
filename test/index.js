@@ -100,3 +100,42 @@ describe('defaults', function() {
     );
   });
 });
+
+describe('defaults.deep', function() {
+  it('should merge objects recursively', function() {
+    var a = { a: 'a', b: { d: 'd', e: { f: 'f' } } };
+    var b = { a: 'no', b: { d: 'no', e: { f: {}, g: 'g' } }, c: 'c' };
+    var c = { n: 'n', b: { z: 'z', d: [1, 2, 3] }, c: 'no', l: 'lol' };
+    var expected = {
+      a: 'a',
+      b: {
+        d: 'd',
+        e: {
+          f: 'f',
+          g: 'g'
+        },
+        z: 'z'
+      },
+      c: 'c',
+      n: 'n',
+      l: 'lol'
+    };
+
+    assert.deepEqual(defaults.deep({}, a, b, c), expected);
+  });
+
+  it('should mutate the first argument', function() {
+    var a = {};
+    var b = { a: 'a' };
+    defaults.deep(a, b);
+
+    assert(a.hasOwnProperty('a'));
+  });
+
+  it('should not merge arrays', function() {
+    var a = { a: [1, 2, 3] };
+    var b = { a: [2, 3, 4] };
+
+    assert.deepEqual(defaults.deep({}, a, b), { a: [1, 2, 3] });
+  });
+});

@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/ndhoule/defaults",
   "dependencies": {
+    "@ndhoule/drop": "^1.0.0",
+    "@ndhoule/each": "^1.0.3",
     "@ndhoule/rest": "^1.0.0"
   },
   "devDependencies": {
