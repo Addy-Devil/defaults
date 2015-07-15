@@ -23,9 +23,9 @@ defaults(a, b);
 console.log(a); //=> { a: 1, b: 2 }
 ```
 
-### `defaults(target : Object, sources : ...Object)` => Object
+### `defaults.deep(target : Object, sources : ...Object)` => Object
 
-Copies owned, enumerable properties from a source object(s) to a target object when the value of that property on the source object is `undefined`. Recurses on objects.
+Deeply copies owned, enumerable properties from a source object(s), recursing on object properties, to a target object when the value of that property on the source object is `undefined`.
 
 ```javascript
 var a = { a: 1, b: { c: 3 } };
