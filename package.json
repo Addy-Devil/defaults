@@ -1,6 +1,6 @@
 {
   "name": "@ndhoule/defaults",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "description": "Copies owned, enumerable properties from a source object(s) to a target object when the value of that property on the source object is `undefined`.",
   "main": "index.js",
   "repository": {
