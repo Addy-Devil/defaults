@@ -1,23 +1,13 @@
 'use strict';
 
-/**
+/*
  * Module dependencies.
  */
 
-// XXX: Hacky fix for Duo not supporting scoped modules
-var drop; try { drop = require('@ndhoule/drop'); } catch(e) { drop = require('ndhoule/drop'); }
-var rest; try { rest = require('@ndhoule/rest'); } catch(e) { rest = require('ndhoule/rest'); }
-
-/**
- * Object#hasOwnProperty reference.
- */
+var drop = require('@ndhoule/drop');
+var rest = require('@ndhoule/rest');
 
 var has = Object.prototype.hasOwnProperty;
-
-/**
- * Object#toString reference.
- */
-
 var objToString = Object.prototype.toString;
 
 /**
@@ -89,7 +79,7 @@ var deepCombiner = function(target, source, value, key) {
 };
 
 /**
- * TODO
+ * TODO: Document
  *
  * @name defaultsWith
  * @api private
@@ -152,7 +142,7 @@ var defaults = function(target /*, ...sources */) {
   return defaultsWith.apply(null, [null, target].concat(rest(arguments)));
 };
 
-/**
+/*
  * Exports.
  */
 
