@@ -1,3 +1,7 @@
+## 2.0.1
+
+- Bump @ndhoule/drop, @ndhoule/rest dependency to fix Browserify builds
+
 ## 2.0.0
 
 - Remove Component/Duo support
