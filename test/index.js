@@ -6,6 +6,15 @@ var assert = require('assert');
 var defaults = require('../');
 var es5It = typeof Object.create === 'function' ? it : xit;
 
+describe('Prototype Pollution Tests', function() {
+  it('should not allow prototype pollution via defaults function', function() {
+    const maliciousPayload = JSON.parse('{"__proto__": {"polluted": "yes"}}');
+    const target = {};
+    defaults(target, maliciousPayload);
+    assert.strictEqual({}.polluted, undefined, 'Prototype pollution detected!');
+  });
+});
+
 describe('defaults', function() {
   it('should be a function', function() {
     assert.equal(typeof defaults, 'function');
