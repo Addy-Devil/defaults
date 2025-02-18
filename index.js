@@ -66,17 +66,21 @@ var shallowCombiner = function shallowCombiner(target, source, value, key) {
  * @param {string} key
  * @return {Object}
  */
-var deepCombiner = function(target, source, value, key) {
-  if (has.call(source, key)) {
-    if (isPlainObject(target[key]) && isPlainObject(value)) {
-        target[key] = defaultsDeep(target[key], value);
-    } else if (target[key] === undefined) {
-        target[key] = value;
+function deepCombiner(target, source) {
+  for (let key in source) {
+    if (Object.prototype.hasOwnProperty.call(source, key) && key !== '__proto__' && key !== 'constructor' && key !== 'prototype') {
+      if (typeof source[key] === 'object' && source[key] !== null) {
+        if (!target[key]) {
+          target[key] = {};
+        }
+        deepCombiner(target[key], source[key]);
+      } else {
+        target[key] = source[key];
+      }
     }
   }
-
-  return source;
-};
+  return target;
+}
 
 /**
  * TODO: Document
